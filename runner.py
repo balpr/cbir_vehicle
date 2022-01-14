@@ -67,7 +67,7 @@ def search():
 	searcher = Searcher('index.csv')
 	results = searcher.search(features)
 
-	positif=['mou','sea','des']
+	positif=['hat','pic','sed']
 	observ= str(results[0][1])[:3]
 	tp = 1 if nama in positif and nama == observ else 0
 	tn = 1 if nama not in positif and nama != observ else 0
@@ -98,5 +98,6 @@ def other_page(page_name):
                              % page_name, 404)
 	return response
 
-if __name__ == '__main__':
-	app.run(debug=True)
+def create_app():
+	return app
+	
